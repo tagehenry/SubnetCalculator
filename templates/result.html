@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnet Calculation Results</title>
+</head>
+<body>
+    <h1>Subnet Calculation Results</h1>
+    <ul>
+        <li><strong>IP Address:</strong> {{ results['ip_address'] }}</li>
+        <li><strong>CIDR Notation:</strong> {{ results['cidr_notation'] }}</li>
+        <li><strong>Subnet Mask:</strong> {{ results['subnet_mask'] }}</li>
+        <li><strong>Network Address:</strong> {{ results['network_address'] }}</li>
+        <li><strong>Broadcast Address:</strong> {{ results['broadcast_address'] }}</li>
+        <li><strong>Usable Host Range:</strong> {{ results['usable_host_range'] }}</li>
+        <li><strong>Total Usable Hosts:</strong> {{ results['total_usable_hosts'] }}</li>
+    </ul>
+    <a href="/">Back to Form</a>
+</body>
+</html>
