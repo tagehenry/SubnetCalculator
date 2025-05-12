@@ -39,3 +39,24 @@ def conver_to_cidr(ip, subnet_mask):
     # Convert subnet mask to CIDR notation
     subnet_bits = sum(bin(int(octet)).count('1') for octet in subnet_mask.split('.'))  # Count the number of 1's in the mask
     return ip, subnet_bits  # Return the IP and subnet bits
+
+def are_ips_in_same_range(ip1, subnet_mask1, ip2, subnet_mask2):
+    # Convert both IPs and subnet masks to CIDR notation
+    ip1, subnet_bits1 = conver_to_cidr(ip1, subnet_mask1)
+    ip2, subnet_bits2 = conver_to_cidr(ip2, subnet_mask2)
+
+    # Calculate network addresses and broadcast addresses for both IPs
+    network1 = subnet_calculator(ip1, subnet_bits1)["network_address"]
+    broadcast1 = subnet_calculator(ip1, subnet_bits1)["broadcast_address"]
+
+    network2 = subnet_calculator(ip2, subnet_bits2)["network_address"]
+    broadcast2 = subnet_calculator(ip2, subnet_bits2)["broadcast_address"]
+
+    # Check if IP1 is within the range of IP2's network
+    ip1_in_range_of_ip2 = network2 <= ip1 <= broadcast2
+
+    # Check if IP2 is within the range of IP1's network
+    ip2_in_range_of_ip1 = network1 <= ip2 <= broadcast1
+
+    # Return True if both conditions are met
+    return ip1_in_range_of_ip2 and ip2_in_range_of_ip1

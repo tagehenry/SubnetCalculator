@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Results</h1>
+    <p><strong>IP Address 1:</strong> {{ ip1 }} / {{ subnet1 }}</p>
+    <p><strong>IP Address 2:</strong> {{ ip2 }} / {{ subnet2 }}</p>
+
+    {% if reachable %}
+        <p style="color: green;"><strong>Result:</strong> The IP addresses are in the same range and can reach each other.</p>
+    {% else %}
+        <p style="color: red;"><strong>Result:</strong> The IP addresses are not in the same range and cannot reach each other.</p>
+    {% endif %}
+
+    <a href="/">Back to Form</a>
+</body>
+</html>

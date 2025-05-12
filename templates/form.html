@@ -2,6 +2,41 @@
 <html>
 <head>
     <title>IP and Subnet Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h2>Enter IP Address and Subnet Mask</h2>
@@ -11,6 +46,25 @@
 
         <label for="subnet">Subnet Mask:</label>
         <input type="text" id="subnet" name="subnet" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <br><br><br><br><br><br>
+    <h2>Network Range Checker</h2>
+    <p>Enter Two IP Addresses and Subnet Masks</p>
+    <p>Check if two IP addresses are in the same range and can reach each other.</p>
+    <form method="POST" action="/compare">
+        <label for="ip1">IP Address 1:</label>
+        <input type="text" id="ip1" name="ip1" required><br><br>
+
+        <label for="subnet1">Subnet Mask 1:</label>
+        <input type="text" id="subnet1" name="subnet1" required><br><br>
+
+        <label for="ip2">IP Address 2:</label>
+        <input type="text" id="ip2" name="ip2" required><br><br>
+
+        <label for="subnet2">Subnet Mask 2:</label>
+        <input type="text" id="subnet2" name="subnet2" required><br><br>
 
         <input type="submit" value="Submit">
     </form>
